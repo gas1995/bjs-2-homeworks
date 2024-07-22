@@ -99,7 +99,12 @@ function summElementsWorker(...arr) {
 
 // Разница между максимальным и минимальным элементом массива
 function differenceMaxMinWorker(...arr) {
-  return Math.max(...arr) - Math.min(...arr);
+  if (arr.length === 0) return 0; // Если массив пуст
+  if (arr.length === 1) return 0; // Если в массиве один элемент
+
+  const max = Math.max(...arr);
+  const min = Math.min(...arr);
+  return max - min;
 }
 
 // Разница между суммой четных и нечетных элементов массива
